@@ -113,7 +113,7 @@ char	*get_next_line(int fd)
 
 	fd = open("file.txt", O_RDONLY);
 	i = 1;
-	while (s = get_next_line(fd))
+	while ((s = get_next_line(fd)))
 	{
 		printf("line [%02d]: %s", i, s);
 		free(s);

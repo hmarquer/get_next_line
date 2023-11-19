@@ -30,7 +30,7 @@ char	*ft_strchr(char *str, int c)
 
 	i = 0;
 	if (!str)
-		return (0);
+		return (NULL);
 	while (str[i] != '\0')
 	{
 		if ((char)c == str[i])
@@ -48,11 +48,6 @@ char	*ft_strjoin_mod(char *str1, char *str2)
 	size_t		j;
 	char		*out;
 
-	if (!str1)
-	{
-		str1 = (char *)malloc(1);
-		str1[0] = '\0';
-	}
 	if (!str2)
 		return (NULL);
 	out = (char *)malloc(ft_strlen(str1) + ft_strlen(str2) + 1);
@@ -60,7 +55,7 @@ char	*ft_strjoin_mod(char *str1, char *str2)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (str1[i])
+	while (str1 && str1[i])
 		out[j++] = str1[i++];
 	i = 0;
 	while (str2[i])
